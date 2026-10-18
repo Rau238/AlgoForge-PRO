@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #080c14;
+  --surface-1: #0d1322;
+  --surface-2: #121b2f;
+  --surface-3: #17233c;
+  --border: #1e2b45;
+  --border-subtle: #151e30;
+  
+  --foreground: #f1f5f9;
+  --text-muted: #8492a6;
+  --text-dim: #50617b;
+  
+  --profit: #10b981;
+  --profit-glow: rgba(16, 185, 129, 0.15);
+  --loss: #ef4444;
+  --loss-glow: rgba(239, 68, 68, 0.15);
+  --warning: #f59e0b;
+  --primary: #6366f1;
+  --primary-glow: rgba(99, 102, 241, 0.2);
+  --blue: #3b82f6;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  user-select: none;
+  letter-spacing: -0.01em;
+}
+
+/* Typography Utilities */
+.font-sans {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Monospace for numbers and financial data */
+.font-mono-num {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-feature-settings: "tnum" 1, "zero" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+/* Native Fullscreen element styling */
+:fullscreen, :-webkit-full-screen {
+  background-color: #080c14 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+/* Custom sleek trading scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080c14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2b45;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Dense table styling */
+.trading-table th {
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #7b8ea7;
+  border-bottom: 1px solid #1e2b45;
+  text-align: left;
+}
+
+.trading-table td {
+  padding: 8px 12px;
+  font-size: 12px;
+  border-bottom: 1px solid #141c2c;
+}
+
+.trading-table tr:hover td {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Pulse animation for live tick */
+@keyframes tick-flash-green {
+  0% { background-color: rgba(16, 185, 129, 0.35); }
+  100% { background-color: transparent; }
+}
+
+@keyframes tick-flash-red {
+  0% { background-color: rgba(239, 68, 68, 0.35); }
+  100% { background-color: transparent; }
+}
+
+.flash-green {
+  animation: tick-flash-green 0.7s ease-out;
+}
+
+.flash-red {
+  animation: tick-flash-red 0.7s ease-out;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar-thumb {
+  background: #18263f;
+  border-radius: 4px;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: #25395c;
+}
