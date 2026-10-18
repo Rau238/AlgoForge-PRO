@@ -7,7 +7,10 @@ class WebSocketClient {
   private url: string;
 
   constructor() {
-    this.url = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:8000/ws";
+    const defaultWs = process.env.NODE_ENV === "production"
+      ? "wss://algoforge-pro-dl74.onrender.com/ws"
+      : "ws://localhost:8000/ws";
+    this.url = process.env.NEXT_PUBLIC_WS_URL || defaultWs;
   }
 
   connect() {

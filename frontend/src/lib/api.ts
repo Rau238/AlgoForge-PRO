@@ -1,4 +1,8 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const DEFAULT_API = process.env.NODE_ENV === "production"
+  ? "https://algoforge-pro-dl74.onrender.com"
+  : "http://localhost:8000";
+
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || DEFAULT_API;
 const API_V1 = `${API_BASE}/api/v1`;
 
 export async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
