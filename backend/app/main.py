@@ -102,10 +102,11 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# CORS
+# CORS - support local development and any deployed production frontend domain
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.CORS_ORIGINS,
+    allow_origin_regex=r"https?://.*",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
